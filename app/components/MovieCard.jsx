@@ -36,7 +36,8 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
     for(let i =index; i<showNum;i++){
 
       return (
-        <Link onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} 
+        <Link onClick={(e) => {e.preventDefault()}}
+        onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} 
         passHref href={`/movie/${encodeURIComponent(movieId)}`} >
         <div className='border-black dark:border-white font-primary
         overflow-hidden pb-1
@@ -49,14 +50,14 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
           
           : <img src={image} className='h-[170px] w-[300px] border rounded-xl border-none'/>}
           <div className='flex flex-col max-h-[205px] gap-1 px-2 justify-between'>
-            <div className='flex flex-row justify-between'>
-              <h1 className=' text-xl font-[800] flex flex-wrap'>{title}</h1>
+            <div className='flex flex-row justify-between flex-wrap'>
+              <h1 className=' text-xl  md:text-lg font-[800] flex flex-wrap'>{title}</h1>
               <button className='text-[14px] min-w-[100px] py-4 max-h-[54px]
               z-20 rounded-md px-1 bg-secondary' onClick={(e) => handleClick(e)}>
                 ADD TO LIST
               </button>
             </div>
-            <p className='overflow-hidden text-[18px] max-h-[100px] min-h-[99px]'>{desc}</p>
+            <p className='overflow-hidden text-[18px] md:text-[14px] max-h-[100px] min-h-[99px]'>{desc}</p>
             <p className='text-end text-[22px] pr-3 self-end
              '>View more</p>
             

@@ -47,11 +47,11 @@ export default function Home() {
   <>
   <div className='flex flex-col h-[100vh] lg:h-full lg:items-center'>
     <div className='flex flex-row  lg:flex-col w-full items-start pt-16 lg:pt-8 lg:items-center'>
-      <div className='flex flex-col w-1/2 lg:w-full items-start pt-32 lg:pt-8'>
-        <h1 className='font-primary text-[80px] dark:text-white font-bold'>
+      <div className='flex flex-col w-1/2 lg:w-full items-start md:items-center pt-32 lg:pt-8'>
+        <h1 className='font-primary text-[80px] lg:text-[54px]  md:text-center dark:text-white font-bold'>
         Lorem ipsum dolor sit amet, consectetur adipiscing.
         </h1>
-        <p className='font-primary text-[24px] font-[100] dark:text-white'>
+        <p className='font-primary text-[24px] md:text-[16px] md:text-center font-[100] dark:text-white'>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere vulputate sapien non iaculis. Fusce pretium tempus posuere. Donec faucibus mollis.
         </p>
         <div className='flex flex-row gap-8 text-white font-[500] font-primary
