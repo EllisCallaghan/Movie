@@ -33,7 +33,7 @@ const page = ({ params }) => {
         <img src={`https://image.tmdb.org/t/p/w780/${results.poster_path}`} className="w-[33%]"/> 
         <div className="w-[50%] flex flex-col gap-7">
           <p className="text-7xl font-bold">{results.title}</p>
-          <p>{results.overview}</p>
+          <p className="overflow-hidden">{results.overview}</p>
           <button className='z-20' onClick={() => dispatch(addToList({item:{...item,...params}}))}>
               ADD TO LIST
             </button>
