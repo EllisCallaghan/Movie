@@ -29,7 +29,7 @@ const page = ({ params }) => {
   const keyArray = Array.from(video)[0];
   return (
     <div className='text-black dark:text-white flex flex-col '>
-      <div className="flex flex-row w-full items-start gap-12 py-[60px]">
+      <div className="flex flex-row w-full items-start gap-12 py-[60px] h-[90vh]">
         <img src={`https://image.tmdb.org/t/p/w780/${results.poster_path}`} className="w-[30%]"/> 
         <div className="w-[50%] flex flex-col gap-7">
           <p className="text-7xl font-bold">{results.title}</p>
@@ -38,7 +38,7 @@ const page = ({ params }) => {
               ADD TO LIST
             </button>
             <YouTube 
-            className='z-20' videoId={keyArray} key={keyArray} opts={{height:'350',width:'600',
+            className='z-20' videoId={keyArray} key={keyArray} opts={{height:'400',width:'600',
             playerVars:{autoplay:1,controls:0,modestbranding:1}}} /> 
         </div>
         
