@@ -51,9 +51,9 @@ const Nav = () => {
       <div className="flex flex-col">
           <button onClick={() => handleClick()} className="text-black dark:text-white">SAVED:&nbsp;{list.length}</button>
 
-            {toggleDropdown ? (<ul className="bg-black list-none absolute mt-5">
+            {toggleDropdown ? (<ul className="bg-black z-10 list-none absolute mt-5">
               {list.map((item) => (
-                <li className="text-white">{item.title}</li>
+                <li className="text-white"><Link href={`/movie/${encodeURIComponent(item.id)}`}>{item.title}</Link></li>
               ))}
             </ul>) : <div></div>}
 

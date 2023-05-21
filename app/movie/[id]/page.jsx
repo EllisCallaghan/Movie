@@ -2,9 +2,17 @@
 import MovieCard from "@/app/components/MovieCard";
 import { fetchRel,fetchDetails,fetchVideo} from "@/utils/fetchAPI";
 import { useState,useEffect } from "react"
-import { useDispatch } from 'react-redux'
+import { Provider, useDispatch } from 'react-redux'
 import YouTube from 'react-youtube'
 import { addToList } from '@/state'
+import { configureStore } from "@reduxjs/toolkit";
+import listReducer from '../../../state'
+const store = configureStore({
+  reducer:{
+    list:listReducer
+  }
+})
+
 const page = ({ params }) => {
   const [results, setResults] = useState([]);
   const [rel, setRel] = useState([])
@@ -27,14 +35,22 @@ const page = ({ params }) => {
     .then((p) => setVideo(p))
   }, [video])
   const keyArray = Array.from(video)[0];
+  const title = results.title
+  const setTitle = (props) => {
+    
+    return(
+      <a>{props.title}</a>
+    )
+  }
   return (
-    <div className='text-black dark:text-white flex flex-col gap-6'>
-      <div className="flex flex-row w-full items-start gap-24 py-[60px] h-[90vh]">
+    <Provider store={store}>
+    <div className=' z-0 text-black dark:text-white flex flex-col gap-6'>
+      <div className="flex flex-row w-full items-start gap-24 py-[60px] max-h-[90vh]">
         <img src={`https://image.tmdb.org/t/p/w780/${results.poster_path}`} className="w-[33%]"/> 
-        <div className="w-[50%] flex flex-col gap-7">
+        <div className="w-[60%] flex flex-col gap-7 h-full">
           <p className="text-7xl font-bold">{results.title}</p>
           <p className="overflow-hidden">{results.overview}</p>
-          <button className='z-20' onClick={() => dispatch(addToList({item:{...item,...params}}))}>
+          <button className='z-20' onClick={() => dispatch(addToList({item:{...item,title}}))}>
               ADD TO LIST
             </button>
             <YouTube 
@@ -56,6 +72,7 @@ const page = ({ params }) => {
 
         
       </div>
+      </Provider>
   )
 }
 

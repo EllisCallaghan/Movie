@@ -11,6 +11,7 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
   const [hover, setHover] = useState(false)
   const [video,setVideo] = useState([])
   const [item, setItem] = useState(null)
+  const [small, setSmall] = useState(false)
   useEffect(() => {
     fetchVideo(movieId)
     .then((p) => setVideo(p))
@@ -21,6 +22,16 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
     e.preventDefault()
   }
   const keyArray = Array.from(video)[0];
+  const getWidth = () => { 
+  if (window.innerWidth < 988){
+    setSmall(true)
+  } console.log(window.innerWidth)
+  }
+  useEffect(() => {
+    getWidth()
+    
+  },[]
+  )
   
     for(let i =index; i<showNum;i++){
 
@@ -29,10 +40,11 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
         passHref href={`/movie/${encodeURIComponent(movieId)}`} >
         <div className='border-black dark:border-white font-primary
         overflow-hidden pb-1
-        flex flex-col gap-4 h-[400px] w-[300px] border rounded-xl hover:scale-110'>
+        flex flex-col gap-4 h-[400px] md:h-[300px] w-[300px] md:w-[210px] border rounded-xl hover:scale-110'>
           {hover ? 
             <YouTube 
-            className='z-20' videoId={keyArray} key={keyArray} opts={{height:'170',width:'300',
+            className='z-20' videoId={keyArray} key={keyArray} 
+            opts={{height:`${small ? '150' : '170'}` ,width:`${small ? '210' : '300'}`,
             playerVars:{autoplay:1,controls:0,modestbranding:1}}} /> 
           
           : <img src={image} className='h-[170px] w-[300px] border rounded-xl border-none'/>}

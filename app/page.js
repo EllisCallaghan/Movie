@@ -45,9 +45,9 @@ export default function Home() {
   return (
     
   <>
-  <div className='flex flex-col h-[100vh]'>
-    <div className='flex flex-row  w-full items-start pt-16'>
-      <div className='flex flex-col w-1/2 items-start pt-32'>
+  <div className='flex flex-col h-[100vh] lg:h-full lg:items-center'>
+    <div className='flex flex-row  lg:flex-col w-full items-start pt-16 lg:pt-8 lg:items-center'>
+      <div className='flex flex-col w-1/2 lg:w-full items-start pt-32 lg:pt-8'>
         <h1 className='font-primary text-[80px] dark:text-white font-bold'>
         Lorem ipsum dolor sit amet, consectetur adipiscing.
         </h1>
@@ -85,7 +85,7 @@ export default function Home() {
     <main id='about' className='flex flex-col gap-7 bg-white text-black dark:bg-primary dark:text-white'>
       <h1  className='text-6xl font-primary font-bold'>FEATURED MOVIES</h1>
       <div  className='flex flex-col gap-7'>
-        <div className='grid grid-flow-row grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-7'>
+        <div className='grid grid-flow-row grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-7 md:gap-4'>
           { 
           
           results.map((results,i) => {
