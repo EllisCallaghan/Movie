@@ -39,7 +39,7 @@ const page = ({ params }) => {
             </button>
             <YouTube 
             className='z-20' videoId={keyArray} key={keyArray} opts={{height:'400',width:'600',
-            playerVars:{autoplay:1,controls:0,modestbranding:1}}} /> 
+            playerVars:{autoplay:1,controls:1,modestbranding:1}}} /> 
         </div>
         
       </div>
