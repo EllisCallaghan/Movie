@@ -42,11 +42,9 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
     for(let i =index; i<showNum;i++){
 
       return (
-        <Link className='touch-handler'
         
-        onMouseEnter={(e) => handleHover(e)} onMouseLeave={() => setHover(false)} 
-        passHref href={`/movie/${encodeURIComponent(movieId)}`} >
-        <div className='border-black dark:border-white font-primary
+        <div onMouseEnter={(e) => handleHover(e)} onMouseLeave={() => setHover(false)} 
+        className='border-black dark:border-white font-primary
         overflow-hidden pb-1
         flex flex-col gap-4 h-[400px] md:h-[300px] w-[300px] md:w-[210px] border rounded-xl hover:scale-110'>
           {hover ? 
@@ -56,6 +54,10 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
             playerVars:{autoplay:1,controls:0,modestbranding:1}}} /> 
           
           : <img src={image} className='h-[170px] w-[300px] border rounded-xl border-none'/>}
+        <Link className='touch-handler'
+        
+        
+        passHref href={`/movie/${encodeURIComponent(movieId)}`} >
           <div className='flex flex-col max-h-[205px] gap-1 px-2 justify-between'>
             <div className=' flex-row justify-between flex-wrap inline-flex'>
               <h1 className=' text-xl  md:text-lg font-[800] flex flex-wrap'>{title}</h1>
@@ -69,10 +71,10 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
              '>View more</p>
             
           </div>
-          
+          </Link>
         </div>
         
-        </Link>
+        
       
     )}
   }
