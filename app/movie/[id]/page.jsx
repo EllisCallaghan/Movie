@@ -18,6 +18,7 @@ const page = ({ params }) => {
   const [rel, setRel] = useState([])
   const [video, setVideo] = useState([])
   const [item, setItem] = useState(null)
+  const [small, setSmall] = useState(false)
   const dispatch = useDispatch()
   useEffect(() => {
     fetchRel(params.id)
@@ -36,31 +37,36 @@ const page = ({ params }) => {
   }, [video])
   const keyArray = Array.from(video)[0];
   const title = results.title
-  const setTitle = (props) => {
-    
-    return(
-      <a>{props.title}</a>
-    )
-  }
+  const getWidth = () => { 
+    if (window.innerWidth < 988){
+      setSmall(true)
+    } console.log(window.innerWidth)
+    }
+    useEffect(() => {
+      getWidth()
+      
+    },[])
+  
   return (
     <Provider store={store}>
-    <div className=' z-0 text-black dark:text-white flex flex-col gap-6'>
-      <div className="flex flex-row w-full items-start gap-24 py-[60px] max-h-[90vh]">
-        <img src={`https://image.tmdb.org/t/p/w780/${results.poster_path}`} className="w-[33%]"/> 
-        <div className="w-[60%] flex flex-col gap-7 h-full">
-          <p className="text-7xl font-bold">{results.title}</p>
+    <div className=' z-0 text-black dark:text-white flex flex-col gap-6 tablet:items-center'>
+      <div className="flex flex-row  tablet:flex-col tablet:items-center w-full items-start gap-24 py-[60px] ">
+        <img src={`https://image.tmdb.org/t/p/w780/${results.poster_path}`} className="w-[33%]  tablet:w-[75%]"/> 
+        <div className="w-[60%] flex flex-col gap-7 h-full md:items-center">
+          <p className="text-7xl font-bold tablet:text-3xl">{results.title}</p>
           <p className="overflow-hidden">{results.overview}</p>
           <button className='z-20' onClick={() => dispatch(addToList({item:{...item,title}}))}>
               ADD TO LIST
             </button>
             <YouTube 
-            className='z-20' videoId={keyArray} key={keyArray} opts={{height:'400',width:'600',
+            className='z-20' videoId={keyArray} key={keyArray} opts={{height:`${small ? '240' : '400'}` ,width:`${small ? '360' : '600'}`,
+
             playerVars:{autoplay:1,controls:1,modestbranding:1}}} /> 
         </div>
         
       </div>
 
-      <div className="grid grid-flow-row gap-7 grid-cols-4">
+      <div className="grid grid-flow-row gap-7 grid-cols-4 lg:grid-cols-3  md:grid-cols-2 tablet:grid-cols-1 lg:items-center">
         {rel.map((item,i) => {
         if (item.backdrop_path != null){
           return(
