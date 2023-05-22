@@ -32,12 +32,15 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
     
   },[]
   )
-  
+  const handleHover = (e) => {
+    setHover(true)
+    e.preventDefault()
+  }
     for(let i =index; i<showNum;i++){
 
       return (
-        <Link onClick={(e) => {e.preventDefault()}}
-        onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} 
+        <Link 
+        onMouseEnter={(e) => handleHover(e)} onMouseLeave={() => setHover(false)} 
         passHref href={`/movie/${encodeURIComponent(movieId)}`} >
         <div className='border-black dark:border-white font-primary
         overflow-hidden pb-1
