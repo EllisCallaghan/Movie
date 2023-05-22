@@ -5,3 +5,7 @@
 *{
     scroll-behavior: smooth;
 }
+
+.touch-handler{
+    touch-action: none;
+}
