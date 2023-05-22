@@ -25,7 +25,7 @@ module.exports = {
       'xl':{'max':'1632px'},
       'lg':{'max':'1332px'},
       'md':{'max':'988px'},
-      'sm':{'max':'650px'}
+      'sm':{'max':'400px'}
     }
   },
   plugins: [],

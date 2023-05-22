@@ -84,8 +84,8 @@ export default function Home() {
     
     <main id='about' className='flex flex-col gap-7 bg-white text-black dark:bg-primary dark:text-white'>
       <h1  className='text-6xl font-primary font-bold'>FEATURED MOVIES</h1>
-      <div  className='flex flex-col gap-7'>
-        <div className='grid grid-flow-row grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-7 md:gap-4'>
+      <div  className='flex flex-col gap-7 sm:items-center'>
+        <div className='grid grid-flow-row sm:items-center grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-7 md:gap-4 sm:grid-cols-1'>
           { 
           
           results.map((results,i) => {
@@ -99,7 +99,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className='flex gap-[20px] self-center'>
+        <div className='flex gap-[20px] md:gap-[8px] self-center'>
           {[1,2,3,4,5,6,7].map((item,index) => (
             <button key={index} className='w-[32px] border border-gray-600 rounded-[12px] p-2' 
             onClick={() => handleClick(item)}>

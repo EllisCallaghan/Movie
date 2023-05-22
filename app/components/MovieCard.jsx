@@ -48,15 +48,15 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
           {hover ? 
             <YouTube 
             className='z-20' videoId={keyArray} key={keyArray} 
-            opts={{height:`${small ? '150' : '170'}` ,width:`${small ? '210' : '300'}`,
+            opts={{height:`${small ? '150' : '200'}` ,width:`${small ? '210' : '300'}`,
             playerVars:{autoplay:1,controls:0,modestbranding:1}}} /> 
           
           : <img src={image} className='h-[170px] w-[300px] border rounded-xl border-none'/>}
           <div className='flex flex-col max-h-[205px] gap-1 px-2 justify-between'>
-            <div className='flex flex-row justify-between flex-wrap'>
+            <div className=' flex-row justify-between flex-wrap inline-flex'>
               <h1 className=' text-xl  md:text-lg font-[800] flex flex-wrap'>{title}</h1>
               <button className='text-[14px] min-w-[100px] py-4 max-h-[54px]
-              z-20 rounded-md px-1 bg-secondary' onClick={(e) => handleClick(e)}>
+              z-20 rounded-md px-1 bg-secondary inline-block' onClick={(e) => handleClick(e)}>
                 ADD TO LIST
               </button>
             </div>
