@@ -44,7 +44,7 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
       return (
         
         <div onMouseEnter={(e) => handleHover(e)} onMouseLeave={() => setHover(false)} 
-        onTouchStart={() => handleTouch()}
+        onTouchStart={() => handleTouch()} onTouchEnd={() => setHover(false)}
         className='border-black dark:border-white font-primary
         overflow-hidden pb-1
         flex flex-col gap-4 h-[400px] md:h-[300px] w-[300px] md:w-[210px] border rounded-xl hover:scale-110'>
