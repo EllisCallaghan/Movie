@@ -39,7 +39,7 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
     for(let i =index; i<showNum;i++){
 
       return (
-        <Link 
+        <Link onTouchStart={(e) => {e.preventDefault()}}
         onMouseEnter={(e) => handleHover(e)} onMouseLeave={() => setHover(false)} 
         passHref href={`/movie/${encodeURIComponent(movieId)}`} >
         <div className='border-black dark:border-white font-primary
@@ -48,7 +48,7 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
           {hover ? 
             <YouTube 
             className='z-20' videoId={keyArray} key={keyArray} 
-            opts={{height:`${small ? '150' : '200'}` ,width:`${small ? '210' : '300'}`,
+            opts={{height:`${small ? '150' : '170'}` ,width:`${small ? '210' : '300'}`,
             playerVars:{autoplay:1,controls:0,modestbranding:1}}} /> 
           
           : <img src={image} className='h-[170px] w-[300px] border rounded-xl border-none'/>}
