@@ -35,7 +35,9 @@ const Nav = () => {
   }
   
   return (
-    <div className="flex flex-row justify-between items-center">
+
+    <div className="flex flex-row justify-between items-center  bg-primary 
+    ">
       <Link 
       href="/" className="rounded-[12px] p-2 border border-black dark:border-white text-black dark:text-white">HOME</Link>
       <button onClick={() => setMode(mode === "light"?"dark":"light")}
@@ -98,6 +100,7 @@ const Nav = () => {
       </div>
       
     </div>
+
   )
 }
 

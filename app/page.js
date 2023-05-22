@@ -60,7 +60,7 @@ export default function Home() {
           <button>Get Started</button>
         </div>
       </div>
-      <Lottie animationData={MovieAnimation} className='w-1/2'/>
+      <Lottie animationData={MovieAnimation} className='w-1/2 z-1'/>
     </div>
     <div className=" animate-pulse flex justify-center items-center">
         <a href="#about">
