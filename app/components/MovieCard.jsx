@@ -42,7 +42,7 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
     for(let i =index; i<showNum;i++){
 
       return (
-        <Link onTouchMove={(e) => handleTouch(e)} 
+        <Link onTouchStart={(e) => handleHover(e)} 
         
         onMouseEnter={(e) => handleHover(e)} onMouseLeave={() => setHover(false)} 
         passHref href={`/movie/${encodeURIComponent(movieId)}`} >
