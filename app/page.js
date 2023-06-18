@@ -74,7 +74,7 @@ export default function Home() {
                 repeat:Infinity,
                 repeatType:'loop'
               }}
-              className="w-3 h-3 rounded-full bg-white mb-1"
+              className="w-3 h-3 rounded-full dark:bg-white bg-black mb-1"
             />
           </div>
         </a>
@@ -93,12 +93,14 @@ export default function Home() {
               return(
                 <MovieCard desc={results.overview} key={i} index={i} showNum={showNum} image={`https://image.tmdb.org/t/p/w780/${results.backdrop_path}`} movieId={results.id} title={results.title}/>)
   }})}
-          <div className='flex items-center justify-start'>
-            <button onClick={() => handleShowAll()} className='w-[25%] h-[25%] rounded-[12px] p-2 border border-black dark:border-white text-black dark:text-white'>
+          
+        </div>
+        <div className='flex items-center justify-start '>
+            <button onClick={() => handleShowAll()} className=' dark:bg-slate-600 text-lg font-[600]
+            w-[25%] h-[25%] rounded-[12px] p-2 border border-black dark:border-none text-black dark:text-primary'>
               SHOW <span>{showNumActive === false ? 'ALL +': 'LESS'}</span>
             </button>
           </div>
-        </div>
         <div className='flex gap-[20px] md:gap-[8px] self-center'>
           {[1,2,3,4,5,6,7].map((item,index) => (
             <button key={index} className='w-[32px] border border-gray-600 rounded-[12px] p-2' 

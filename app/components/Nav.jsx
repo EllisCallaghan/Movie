@@ -36,26 +36,31 @@ const Nav = () => {
   
   return (
 
-    <div className="flex flex-row justify-between items-center  bg-primary 
+    <div className="flex flex-row justify-between items-center  
     ">
       <Link 
       href="/" className="rounded-[12px] p-2 border border-black dark:border-white text-black dark:text-white">HOME</Link>
-      <button onClick={() => setMode(mode === "light"?"dark":"light")}
-          className={`ml-3 flex item-center justify-center rounded-full p-1 ${mode=== "light"? "bg-white text-black" : "bg-black text-white"}`}
-          >
-              {
-                  mode === "dark"?
-                  <Image src={SunIcon} alt="sun" className={"fill-black w-[32px]"}/>
-                  
-                  :<Image src={CloudIcon} alt="cloud" className={"fill-black w-[32px]"}/>
-              }
-      </button>
+      <div onClick={() => setMode(mode === "light"?"dark":"light")} className="cursor-pointer flex flex-row gap-3 justify-center items-center">
+        <button 
+            className={`ml-3 flex item-center justify-center rounded-full p-1 ${mode=== "light"? "bg-white text-black" : " text-white"}`}
+            >
+                {
+                    mode === "dark"?
+                    <Image src={SunIcon} alt="sun" className={" w-[32px]"}/>
+                    
+                    :<Image src={CloudIcon} alt="cloud" className={"w-[32px]"}/>
+                }
+        </button>
+        <p className="text-black dark:text-white">
+          {mode === "dark" ? <span>Light Mode</span> : <span>Dark Mode</span>}
+        </p>
+      </div>
       <div className="flex flex-col">
           <button onClick={() => handleClick()} className="text-black dark:text-white">SAVED:&nbsp;{list.length}</button>
 
             {toggleDropdown ? (<ul className="bg-black z-10 list-none absolute mt-5">
               {list.map((item) => (
-                <li className="text-white"><Link href={`/movie/${encodeURIComponent(item.id)}`}>{item.title}</Link></li>
+                <li className="text-white"><Link href={`/movie/${encodeURIComponent(item.movieId)}`}>{item.title}</Link></li>
               ))}
             </ul>) : <div></div>}
 
@@ -90,7 +95,7 @@ const Nav = () => {
                     signIn(provider.id);
                   }}
                   className='font-primary font-[500] text-[16px] leading-[26.4px] bg-[#162044] border border-none 
-                  px-[16px] py-[16px] rounded-[8px]'
+                  px-[16px] py-[16px] rounded-[8px] text-white'
                 >
                   Sign in
                 </button>

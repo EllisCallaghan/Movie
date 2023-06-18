@@ -46,7 +46,7 @@ const page = ({ params }) => {
       getWidth()
       
     },[])
-  
+  const movieId = params.id;
   return (
     <Provider store={store}>
     <div className=' z-0 text-black dark:text-white flex flex-col gap-6 tablet:items-center'>
@@ -55,7 +55,7 @@ const page = ({ params }) => {
         <div className="w-[60%] flex flex-col gap-7 h-full md:items-center">
           <p className="text-7xl font-bold tablet:text-3xl">{results.title}</p>
           <p className="overflow-hidden">{results.overview}</p>
-          <button className='z-20' onClick={() => dispatch(addToList({item:{...item,title}}))}>
+          <button className='z-20' onClick={() => dispatch(addToList({item:{movieId,title}}))}>
               ADD TO LIST
             </button>
             <YouTube 

@@ -10,7 +10,7 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
   const dispatch = useDispatch();
   const [hover, setHover] = useState(false)
   const [video,setVideo] = useState([])
-  const [item, setItem] = useState(null)
+
   const [small, setSmall] = useState(false)
   useEffect(() => {
     fetchVideo(movieId)
@@ -18,7 +18,7 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
   }, [video])
 
   const handleClick = (e) => {
-    dispatch(addToList({item:{...item,title}}))
+    dispatch(addToList({item:{movieId,title}}))
     e.preventDefault()
   }
   const keyArray = Array.from(video)[0];
@@ -60,7 +60,7 @@ const MovieCard = ({title,image,showNum,index,movieId,desc}) => {
         
         passHref href={`/movie/${encodeURIComponent(movieId)}`} >
           <div className='flex flex-col max-h-[205px] gap-1 px-2 justify-between'>
-            <div className=' flex-row justify-between flex-wrap inline-flex'>
+            <div className=' flex-row justify-between inline-flex'>
               <h1 className=' text-xl  md:text-lg font-[800] flex flex-wrap'>{title}</h1>
               <button className='text-[14px] min-w-[100px] py-4 max-h-[54px]
               z-20 rounded-md px-1 bg-secondary inline-block' onClick={(e) => handleClick(e)}>
