@@ -48,7 +48,7 @@ export default function Home() {
   <div className='flex flex-col h-[100vh] lg:h-full lg:items-center'>
     <div className='flex flex-row  lg:flex-col w-full items-start pt-16 lg:pt-8 lg:items-center'>
       <div className='flex flex-col w-1/2 lg:w-full items-start md:items-center pt-32 lg:pt-8'>
-        <h1 className='font-primary text-[80px] lg:text-[54px]  md:text-center dark:text-white font-bold'>
+        <h1 className='font-primary text-[80px] lg:text-[54px] sm:text-[40px]  md:text-center dark:text-white font-bold'>
         Lorem ipsum dolor sit amet, consectetur adipiscing.
         </h1>
         <p className='font-primary text-[24px] md:text-[16px] md:text-center font-[100] dark:text-white'>
@@ -60,7 +60,7 @@ export default function Home() {
           <button>Get Started</button>
         </div>
       </div>
-      <Lottie animationData={MovieAnimation} className='w-1/2 z-1'/>
+      <Lottie animationData={MovieAnimation} className='w-1/2 md:w-[85%] z-1'/>
     </div>
     <div className=" animate-pulse flex justify-center items-center">
         <a href="#about">
@@ -97,7 +97,7 @@ export default function Home() {
         </div>
         <div className='flex items-center justify-start '>
             <button onClick={() => handleShowAll()} className=' dark:bg-slate-600 text-lg font-[600]
-            w-[25%] sm:w-[60%] h-[25%] rounded-[12px] p-2 border border-black dark:border-none text-black dark:text-primary'>
+            w-[25%] min-w-[150px] h-[25%] rounded-[12px] p-2 border border-black dark:border-none text-black dark:text-primary'>
               SHOW <span>{showNumActive === false ? 'ALL +': 'LESS'}</span>
             </button>
           </div>
