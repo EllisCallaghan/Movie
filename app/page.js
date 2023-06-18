@@ -97,7 +97,7 @@ export default function Home() {
         </div>
         <div className='flex items-center justify-start '>
             <button onClick={() => handleShowAll()} className=' dark:bg-slate-600 text-lg font-[600]
-            w-[25%] h-[25%] rounded-[12px] p-2 border border-black dark:border-none text-black dark:text-primary'>
+            w-[25%] sm:w-[60%] h-[25%] rounded-[12px] p-2 border border-black dark:border-none text-black dark:text-primary'>
               SHOW <span>{showNumActive === false ? 'ALL +': 'LESS'}</span>
             </button>
           </div>
