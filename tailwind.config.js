@@ -29,5 +29,5 @@ module.exports = {
       'sm':{'max':'400px'}
     }
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 }

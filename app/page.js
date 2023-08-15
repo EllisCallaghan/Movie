@@ -45,22 +45,22 @@ export default function Home() {
   return (
     
   <>
-  <div className='flex flex-col h-[100vh] lg:h-full lg:items-center'>
+  <div className='flex flex-col h-[100vh] lg:h-full lg:items-center text-black'>
     <div className='flex flex-row  lg:flex-col w-full items-start pt-16 lg:pt-8 lg:items-center'>
       <div className='flex flex-col w-1/2 lg:w-full items-start md:items-center pt-32 lg:pt-8'>
         <h1 className='font-primary text-[80px] lg:text-[54px] sm:text-[40px]  md:text-center dark:text-white font-bold'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing.
+        Explore the World of Cinema
         </h1>
         <p className='font-primary text-[24px] md:text-[16px] md:text-center font-[100] dark:text-white'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere vulputate sapien non iaculis. Fusce pretium tempus posuere. Donec faucibus mollis.
+        Welcome to my movie website, where you can explore movies, watch trailers, and stay up-to-date on the latest releases in the world of cinema.
         </p>
-        <div className='flex flex-row gap-8 text-white font-[500] font-primary
+        {/* <div className='flex flex-row gap-8 text-white font-[500] font-primary
         text-[18px] pt-[16px] items-center'>
           <button>Sign up</button>
           <button>Get Started</button>
-        </div>
+        </div> */}
       </div>
-      <Lottie animationData={MovieAnimation} className='w-1/2 md:w-[85%] z-1'/>
+      <Lottie animationData={MovieAnimation} loop={false} className='w-1/2 md:w-[85%] z-1'/>
     </div>
     <div className=" animate-pulse flex justify-center items-center">
         <a href="#about">

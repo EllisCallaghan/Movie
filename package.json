@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.16",
     "@reduxjs/toolkit": "^1.9.5",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
+    "daisyui": "^3.5.1",
     "framer-motion": "^10.12.12",
     "lottie-react": "^2.4.0",
     "mongodb": "^5.5.0",
